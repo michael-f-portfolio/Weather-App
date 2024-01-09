@@ -10,6 +10,7 @@ export default class MainContent {
 
     this.weatherDisplayContainer = document.createElement("div");
     this.weatherDisplayContainer.id = "weather-display-container";
+    this.weatherDisplayContainer.classList.add("hidden");
 
     this.locationContainer = document.createElement("div");
     this.locationContainer.id = "location-container";
@@ -72,6 +73,7 @@ export default class MainContent {
     if (content.error) {
       this.messageDisplay.textContent = content.error;
     } else {
+      this.weatherDisplayContainer.classList.remove("hidden");
       this.messageDisplay.textContent = "";
       this.cityDisplay.textContent = `${content.city}, `;
       this.provinceDisplay.textContent = `${content.province}, `;

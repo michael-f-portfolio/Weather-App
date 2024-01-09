@@ -10,6 +10,11 @@ div#main-content-container {
                 rgba(0,0,0,0.45) 0 -20px 10px -20px  inset;
 }
 
+div.hidden {
+    visibility: hidden;
+    height: 0;
+}
+
 div#weather-display-container {
     box-sizing: content-box;
     display: flex;
