@@ -80,6 +80,7 @@ export default class MainContent {
   displayContent(content) {
     if (content.error) {
       this.messageDisplay.textContent = content.error;
+      this.weatherDisplayContainer.classList.add("hidden");
     } else {
       this.weatherDisplayContainer.classList.remove("hidden");
       this.messageDisplay.textContent = "";
