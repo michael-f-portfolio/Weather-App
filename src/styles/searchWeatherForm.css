@@ -4,9 +4,9 @@ form#search-weather-form {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 40vw;
+    width: 60vw;
     min-width: 200px;
-    max-width: 500px;
+    /* max-width: 500px; */
     padding: 16px;
     border-radius: 4px;
     background-color: var(--slate-400);
@@ -37,12 +37,26 @@ form#search-weather-form input:focus-visible {
     }
 }
 
-@media screen and (min-width:376px) and (max-width:850px) {
+@media screen and (min-width:376px) and (max-width:500px) {
     form#search-weather-form {
-        width: 90vw;
+        width: 80vw;
     }
 
     form#search-weather-form input {
-        width: 70vw;
+        width: 80vw;
     }
+}
+
+@media screen and (min-width:501px) and (max-width:850px) {
+    form#search-weather-form {
+        width: 80vw;
+    }
+
+    form#search-weather-form input {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width:851px) {
+
 }

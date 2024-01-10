@@ -24,8 +24,8 @@ div#weather-display-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vw;
-    max-width: 500px;
+    width: 60vw;
+    /* max-width: 500px; */
     min-width: 200px;
     gap: 8px;
     padding: 16px;
@@ -114,10 +114,6 @@ div#wind-condition-container {
         width: 80vw;
     }
 
-    div#temperature-container {
-        flex-direction: column;
-    }
-
     div#city-display {
         font-size: 2rem;
     }
@@ -134,21 +130,41 @@ div#wind-condition-container {
     img#current-condition-icon {
         width: 6rem;
     }
+
+    div#temperature-container {
+        flex-direction: column;
+    }
 }
 
-@media screen and (min-width:376px) and (max-width:850px) {
+@media screen and (min-width:376px) and (max-width:500px) {
     div#weather-display-container {
-        width: 90vw;
+        width: 80vw;
     }
 
     div#location-container {
         font-size: 1rem;
     }
 
+    div#province-display {
+        font-size: 1rem;
+    }
+
+    div#country-display {
+        font-size: 1rem;
+    }
+
     div#temperature-container {
-        /* flex-direction: column; */
         gap: 8px;
         font-size: 1rem;
+        /* justify-content: space-between; */
+    }
+
+    div#current-condition-display {
+        font-size: 1rem;
+    }
+
+    div#temperature-display {
+        font-size: 2rem;
     }
 
     div#current-condition-container {
@@ -158,4 +174,52 @@ div#wind-condition-container {
     div#wind-condition-container {
         font-size: 1rem;
     }
+}
+
+@media screen and (min-width:501px) and (max-width:850px) {
+    div#weather-display-container {
+        width: 80vw;
+    }
+
+    div#city-display {
+        font-size: 2.5rem;
+    }
+
+    div#province-display {
+        font-size: 1.5rem;
+    }
+
+    div#country-display {
+        font-size: 1.5rem;
+    }
+
+    div#temperature-container {
+        /* gap: 8px; */
+        /* font-size: 1rem; */
+        /* justify-content: space-between; */
+    }
+
+    div#current-condition-display {
+        font-size: 1rem;
+    }
+
+    div#temperature-display {
+        font-size: 3rem;
+    }
+
+    div#current-condition-container {
+        flex-direction: row;
+    }
+
+    div#current-condition-display {
+        font-size: 1.5rem;
+    }
+
+    div#wind-condition-container {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:851px) {
+
 }
