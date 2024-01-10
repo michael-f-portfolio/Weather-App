@@ -24,41 +24,25 @@ form#search-weather-form input {
 
 form#search-weather-form input:focus-visible {
     outline: none;
-    background-color: var(--slate-300);
+    background-color: var(--slate-200);
 }
 
-button {
-    font-family: "Roboto-300";
-    appearance: button;
-    background-color: var(--blue-600);
-    border: 1px solid var(--blue-600);
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    line-height: 1.15;
-    overflow: visible;
-    padding: 8px 12px;
-    position: relative;
-    text-align: center;
-    text-transform: none;
-    transition: all 80ms ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: max-content;
+@media screen and (max-width: 375px) {
+    form#search-weather-form {
+        width: 80vw;
+    }
+
+    form#search-weather-form input {
+        width: 50vw;
+    }
 }
 
-button:focus {
-    outline: 0;
-}
+@media screen and (min-width:376px) and (max-width:850px) {
+    form#search-weather-form {
+        width: 90vw;
+    }
 
-button:hover {
-    background-color: #0A46E4;
-    border-color: #0A46E4;
-}
-
-button:active {
-    background-color: #0039D7;
-    border-color: #0039D7;
+    form#search-weather-form input {
+        width: 70vw;
+    }
 }
