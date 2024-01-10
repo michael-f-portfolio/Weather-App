@@ -61,10 +61,15 @@ export default class MainContent {
       this.windSpeedDisplay,
       this.windDirectionDisplay
     );
+
+    this.toggleTemperatureScaleButton = document.createElement("button");
+    this.toggleTemperatureScaleButton.id = "toggle-temperature-scale-button";
+    this.toggleTemperatureScaleButton.textContent = "Make American";
     this.weatherDisplayContainer.append(
       this.locationContainer,
       this.temperatureContainer,
-      this.windConditionsContainer
+      this.windConditionsContainer,
+      this.toggleTemperatureScaleButton
     );
 
     this.mainContentContainer.append(
@@ -99,5 +104,16 @@ export default class MainContent {
       }`;
       this.windDirectionDisplay.textContent = `(${content.windDirection})`;
     }
+  }
+
+  bindToggleTemperatureScale(handler) {
+    this.toggleTemperatureScaleButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      handler();
+      this.toggleTemperatureScaleButton.textContent === "Make American"
+        ? (this.toggleTemperatureScaleButton.textContent =
+            "Make Literally Everywhere Else")
+        : (this.toggleTemperatureScaleButton = "Make American");
+    });
   }
 }

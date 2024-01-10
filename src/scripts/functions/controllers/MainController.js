@@ -26,6 +26,9 @@ export default class MainController {
     this.mainContent.searchWeatherForm.bindUpdateContent(
       this.handleUpdateContent
     );
+    this.mainContent.bindToggleTemperatureScale(
+      this.handleToggleTemperatureScale
+    );
     this.weatherModel.bindContentChange(this.onContentChange);
   }
 
@@ -39,7 +42,7 @@ export default class MainController {
       if (data.error) {
         throw Error(`${data.error.code}:${data.error.message}`);
       }
-      this.weatherModel.updateContent(data);
+      this.weatherModel.setContent(data);
     } catch (err) {
       if (err.message.includes("2008")) {
         this.mainContent.displayContent({
@@ -52,5 +55,9 @@ export default class MainController {
         });
       }
     }
+  };
+
+  handleToggleTemperatureScale = () => {
+    this.weatherModel.toggleDegreeType();
   };
 }

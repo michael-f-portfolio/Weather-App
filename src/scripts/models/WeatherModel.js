@@ -4,7 +4,7 @@ export default class WeatherModel {
     this.showAsCelsius = true;
   }
 
-  updateContent(content) {
+  setContent(content) {
     this.tempC = content.current.temp_c;
     this.tempF = content.current.temp_f;
     this.currentCondition = content.current.condition.text;
@@ -15,6 +15,15 @@ export default class WeatherModel {
     this.country = content.location.country;
     this.province = content.location.region;
     this.city = content.location.name;
+    this.displayContent();
+  }
+
+  toggleDegreeType() {
+    this.showAsCelsius = !this.showAsCelsius;
+    this.displayContent();
+  }
+
+  displayContent() {
     if (this.showAsCelsius) {
       this.onContentChanged({
         temperature: this.tempC,
@@ -40,10 +49,6 @@ export default class WeatherModel {
         asCelsius: false,
       });
     }
-  }
-
-  toggleDegreeType() {
-    this.showAsCelsius = !this.showAsCelsius;
   }
 
   bindContentChange(callback) {
